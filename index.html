@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kiran Mamadapur — UI/UX Designer</title>
+<meta name="description" content="UI/UX designer with a business analysis background. Case studies in e-commerce, brand systems and process design.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#e4e7e2;--panel:#d5dad4;--ink:#161a1c;--mute:#586166;--acc:#1f3fff;--line:#b9c0ba;--on:#fff}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#121517;--panel:#1b2023;--ink:#e6e9e4;--mute:#97a1a6;--acc:#7f93ff;--line:#2c3438;--on:#121517}}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 "Public Sans",system-ui,sans-serif}
+h1,h2,h3{font-family:"Bricolage Grotesque",system-ui,sans-serif;line-height:1.05;margin:0;letter-spacing:-.02em}
+a{color:inherit}a:focus-visible,button:focus-visible{outline:3px solid var(--acc);outline-offset:3px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+nav{display:flex;justify-content:space-between;align-items:center;padding:20px 0;font-weight:600}
+nav div{display:flex;gap:22px}nav a{text-decoration:none}nav a:hover{color:var(--acc)}
+.hero{position:relative;padding:72px 0 96px}
+.hero h1{font-size:clamp(40px,8vw,92px);font-weight:800;max-width:14ch}
+.hero p{max-width:52ch;font-size:19px;color:var(--mute);margin:28px 0}
+.path{position:absolute;right:0;top:40px;width:min(46vw,440px);opacity:.9;pointer-events:none}
+.path path{stroke:var(--acc);stroke-width:3;fill:none;stroke-dasharray:900;stroke-dashoffset:900;animation:draw 2.4s .2s ease forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+@media(prefers-reduced-motion:reduce){.path path{animation:none;stroke-dashoffset:0}html{scroll-behavior:auto}}
+.btn{display:inline-block;background:var(--acc);color:var(--on);padding:13px 24px;border-radius:6px;font-weight:600;text-decoration:none}
+.btn.o{background:none;color:var(--ink);border:2px solid var(--ink);margin-left:10px}
+section{padding:72px 0;border-top:1px solid var(--line)}
+section>.wrap>h2{font-size:clamp(30px,5vw,48px);margin-bottom:36px}
+.case{display:grid;grid-template-columns:1.1fr 1fr;gap:40px;padding:44px 0;border-top:1px solid var(--line)}
+.case:first-of-type{border-top:0;padding-top:0}
+.case h3{font-size:clamp(26px,4vw,38px);margin-bottom:6px}
+.meta{color:var(--mute);font-size:15px;margin:0 0 18px}
+.case h4{font:600 16px "Public Sans";margin:20px 0 4px}
+.case p,.case ul{margin:0;max-width:60ch}.case ul{padding-left:20px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.tags span{border:1px solid var(--line);border-radius:99px;padding:3px 12px;font-size:14px;color:var(--mute)}
+.shot{background:var(--panel);border-radius:14px;padding:22px;align-self:start;min-height:300px;display:flex;align-items:center;justify-content:center}
+.phone{width:210px;background:var(--bg);border-radius:20px;padding:14px;border:2px solid var(--ink)}
+.img{height:110px;background:repeating-linear-gradient(135deg,var(--line) 0 8px,var(--panel) 8px 16px);border-radius:8px}
+.row{display:flex;gap:6px;margin:10px 0}.chip{border:1.5px solid var(--ink);border-radius:5px;padding:2px 9px;font-size:12px;font-weight:600}.chip.on{background:var(--ink);color:var(--bg)}
+.pin{display:flex;border:1.5px solid var(--ink);border-radius:6px;overflow:hidden;font-size:12px}.pin b{flex:1;padding:6px 8px;font-weight:500;color:var(--mute)}.pin i{background:var(--acc);color:var(--on);padding:6px 10px;font-style:normal;font-weight:600}
+.est{font-size:12px;margin:6px 0 10px}.cta{background:var(--ink);color:var(--bg);text-align:center;border-radius:6px;padding:8px;font-size:13px;font-weight:600}
+.flow{display:grid;gap:10px;width:100%;max-width:300px}.node{background:var(--bg);border:1.5px solid var(--ink);border-radius:8px;padding:10px 14px;font-size:14px;font-weight:600}.node.d{border-radius:24px;border-color:var(--acc);color:var(--acc)}
+.big{font:800 64px "Bricolage Grotesque";color:var(--acc);line-height:1}
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:36px}
+.skills h3{font-size:22px;margin-bottom:8px}.skills p{margin:0;color:var(--mute)}
+footer{padding:72px 0 48px;border-top:1px solid var(--line)}footer h2{font-size:clamp(34px,6vw,64px);max-width:16ch}
+footer a.mail{display:inline-block;margin-top:24px;font:700 24px "Bricolage Grotesque";color:var(--acc)}
+@media(max-width:800px){.case{grid-template-columns:1fr}.path{display:none}.btn.o{margin:10px 0 0}}
+</style></head><body>
+<div class="wrap">
+<nav><a href="#top">Kiran Mamadapur</a><div><a href="#work">Work</a><a href="#approach">Approach</a><a href="#contact">Contact</a></div></nav>
+<header class="hero" id="top">
+<svg class="path" viewBox="0 0 440 360" aria-hidden="true"><path d="M10 330 H120 V230 H60 V120 H200 V200 H300 C340 200 330 60 400 60 H430"/></svg>
+<h1>Interfaces that start from the requirement.</h1>
+<p>I'm a UI/UX designer in Bangalore with an MBA and an IBM Business Analyst certification. I map the process first, then design screens people finish using.</p>
+<a class="btn" href="#work">See the work</a><a class="btn o" href="#contact">Get in touch</a>
+</header></div>
+
+<section id="work"><div class="wrap"><h2>Selected work</h2>
+
+<article class="case"><div>
+<h3>THE OFF GRID store</h3><p class="meta">E-commerce UX and front end · Designer and builder · 2026</p>
+<h4>Problem</h4><p>An Indian D2C streetwear brand needed a store that builds trust on first visit and makes buying on mobile quick.</p>
+<h4>What I designed</h4><ul>
+<li>PIN code delivery estimator on the product page, so shoppers see arrival time before the cart.</li>
+<li>Quick View, color and fit filters, Related Products and Recently Viewed to shorten the path to a size choice.</li>
+<li>Notify Me waitlist for sold-out sizes instead of a dead end.</li>
+<li>Returns and exchange flow, gift cards and abandoned-cart recovery.</li></ul>
+<h4>Research</h4><p>Benchmarked the flows of Snitch, Nobero, Wrogn and Rare Rabbit before deciding what to keep, drop or simplify.</p>
+<h4>Result</h4><p>Built and deployed as an installable web app (React, Node, PostgreSQL), with an admin side that uses two-factor sign-in.</p>
+<div class="tags"><span>Figma</span><span>React</span><span>Competitor audit</span><span>Mobile-first</span></div>
+</div><div class="shot" role="img" aria-label="Wireframe of a product page with size chips, PIN code field and add to bag button"><div class="phone"><div class="img"></div>
+<div class="row"><span class="chip">S</span><span class="chip on">M</span><span class="chip">L</span><span class="chip">XL</span></div>
+<div class="pin"><b>560001</b><i>Check</i></div><div class="est">Arrives in 3–5 days</div><div class="cta">Add to bag</div></div></div></article>
+
+<article class="case"><div>
+<h3>THE OFF GRID brand system</h3><p class="meta">Brand identity · Founder and designer · 2026</p>
+<h4>Problem</h4><p>A new streetwear label needed a mark that could grow with the brand and still look right on a hangtag, a favicon and a tee.</p>
+<h4>What I designed</h4><ul>
+<li>An abstract OG monogram, chosen over literal imagery so the mark can outlast any one product line.</li>
+<li>A full SVG kit: lockups, monochrome versions and a hangtag mockup.</li>
+<li>Tagline: "Wear your own path."</li></ul>
+<h4>Research</h4><p>Positioned against premium menswear brands such as Andamen.</p>
+<div class="tags"><span>Logo design</span><span>SVG</span><span>Brand guidelines</span></div>
+</div><div class="shot" role="img" aria-label="Abstract OG monogram"><svg width="200" viewBox="0 0 200 200"><circle cx="100" cy="100" r="78" fill="none" stroke="var(--ink)" stroke-width="14"/><path d="M100 100 H178 V150" fill="none" stroke="var(--acc)" stroke-width="14" stroke-linecap="square"/></svg></div></article>
+
+<article class="case"><div>
+<h3>Clinic wait-time redesign</h3><p class="meta">Process and service design · IBM BA certification capstone</p>
+<h4>Problem</h4><p>Patients waited too long between registration and consultation.</p>
+<h4>What I did</h4><ul>
+<li>Mapped the current flow in BPMN and marked where patients stalled.</li>
+<li>Redesigned the handoffs and wrote the requirements (BRD, RTM) the change depends on.</li></ul>
+<h4>Result</h4><p>Projected 30% shorter patient wait time.</p>
+<div class="tags"><span>BPMN</span><span>User flows</span><span>BRD / RTM</span></div>
+</div><div class="shot" role="img" aria-label="Simplified patient flow diagram"><div class="flow"><div class="node">Register</div><div class="node d">Triage</div><div class="node">Consult</div><div class="node">Billing</div><div class="big">−30%</div></div></div></article>
+
+<article class="case"><div>
+<h3>CRM workflow clean-up</h3><p class="meta">Internship · Girias Investment Pvt. Ltd.</p>
+<h4>Problem</h4><p>Client records and follow-ups lived in a CRM that slowed the team down.</p>
+<h4>What I did</h4><p>Documented how the team actually worked, simplified the steps and specified the changes for the CRM.</p>
+<h4>Result</h4><p>24% efficiency improvement.</p>
+<div class="tags"><span>CRM</span><span>Requirements</span><span>Stakeholder interviews</span></div>
+</div><div class="shot" role="img" aria-label="24 percent efficiency improvement"><div><div class="big">24%</div><p class="meta" style="margin-top:8px">efficiency gain</p></div></div></article>
+</div></section>
+
+<section id="approach"><div class="wrap"><h2>How I work</h2><div class="skills">
+<div><h3>Start with the process</h3><p>BPMN, BRDs and stakeholder interviews tell me what a screen must do before I draw it.</p></div>
+<div><h3>Design in the open</h3><p>Balsamiq for quick structure, Figma for the real thing, and a build when the idea needs proof.</p></div>
+<div><h3>Measure the change</h3><p>SQL and Power BI let me check whether a design did its job.</p></div>
+<div><h3>Work in sprints</h3><p>Agile and Scrum habits: small releases, clear acceptance criteria, steady updates.</p></div>
+</div></div></section>
+
+<footer id="contact"><div class="wrap"><h2>Let's design something that works.</h2>
+<a class="mail" href="mailto:your-kiranmamadapur4669@gmail.com">your-kiranmamadapur4669@gmail.com</a>
+<p><a href="https://www.linkedin.com/in/kiran-mamadapur/">LinkedIn</a> · <a href="Kiran-Mamadapur-Resume.pdf" target="_blank">Resume</a> · Bangalore, India</p></div></footer>
+</body></html>
