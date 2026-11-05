@@ -192,13 +192,7 @@ rk:["Courier estimate is wrong|Show a range, not one date","Stock mismatch|Updat
 it:["Size chips respond on tap and show stock state","The PIN check shows the estimate in place, without a page reload"],
 kd:["Sessions with an add-to-bag divided by all sessions","Return and exchange requests divided by orders","Waitlist sign-ups divided by sold-out size views"],
 ft:["Product catalogue","Product details","Size selection","Delivery estimation","Cart","Checkout","Orders","Account","Admin","Product management"]},
-urbanthread:{m:["Business Analyst and UI/UX Designer","Independent, self-paced","Solo","Figma, Jira, Excel","Concept project, fashion e-commerce"],
-st:["Business owner|Head of e-commerce: conversion and sales","End users|Shoppers: quick filters and checkout","Operations|Warehouse: accurate stock and dispatch","Customer support|Fewer order-status calls","Product / IT|Maintainable filters and checkout","Admin|Merchandiser: collections and promotions"],
-cur:"Filters open on a separate page and reset on every change. Checkout needs an account and has six steps.",fut:"One filter sheet with live counts, guest checkout in three steps and an order tracking page.",
-br:["Out-of-stock sizes show greyed out","Guest orders need only email, address and payment"],as:["Stock data updates in near real time","Most traffic comes from mobile"],co:["The existing payment gateway stays","The catalogue structure does not change"],
-rk:["Filters slow on a large catalogue|Server-side filtering with caching","Fewer account sign-ups|Offer account creation after the order"],
-it:["Filter chips update the count as they are tapped","The heart icon saves to the wishlist in one tap"],
-kd:["Completed orders divided by checkout starts","Filter applications divided by sessions","Order-status tickets per 100 orders"]},
+
 medicare:{m:["Business Analyst and UI/UX Designer","Independent, self-paced","Solo","Figma, BPMN, Power BI","Concept project, healthcare"],
 st:["Business owner|Clinic director: patient throughput","End users|Patients and doctors","Operations|Reception: one shared calendar","Customer support|Patient helpline: fewer booking calls","Product / IT|A secure, role-based system","Admin|Clinic admin: schedules and reports"],
 cur:"Reception books by phone in a paper register and slots overlap.",fut:"Patients book online from live availability, and a booked slot disappears for everyone else.",
@@ -228,7 +222,7 @@ rk:["Prep time estimates are wrong|Update them from real prep history","Rider sh
 it:["The tracking line moves as the rider updates","The restaurant tablet sounds an alert for each new order"],
 kd:["Minutes from order placed to delivered","Correct orders divided by all orders","Cancelled orders divided by all orders"]}};
 P.forEach(p=>Object.assign(p,X[p.id]));
-const GW={offgrid:[1,"Size in stock?","Offer Notify Me"],urbanthread:[2,"In stock?","Grey out size"],medicare:[1,"Slot free?","Offer next slot"],novabank:[2,"Account valid?","Show error"],talentbridge:[1,"Fits the role?","Add to talent pool"],quickbite:[1,"Accepted?","Cancel and refund"]};
+const GW={offgrid:[1,"Size in stock?","Offer Notify Me"],medicare:[1,"Slot free?","Offer next slot"],novabank:[2,"Account valid?","Show error"],talentbridge:[1,"Fits the role?","Add to talent pool"],quickbite:[1,"Accepted?","Cancel and refund"]};
 P.forEach(p=>p.gw=GW[p.id]);
 P[0].oc="Built as a full-stack web app (React and Vite, Node.js, Express, PostgreSQL) and deployed on Vercel and Render. It includes returns and exchanges, gift cards, abandoned-cart recovery, a PWA and an admin area with two-factor sign-in. Business metrics will be added once there are enough orders to measure.";
 P[0].m[3]="Figma, React, Vite, Node.js, Express, PostgreSQL, Vercel, Render";
@@ -262,7 +256,7 @@ s+=`<rect x="12" y="160" width="96" height="26" rx="8" fill="${hi?`url(#${id})`:
 function lk(p,sec){const l=LINKS[p.id]||{},o=[];if(l.live)o.push(["View Live Store →",l.live]);if(l.figma)o.push(["View Figma prototype →",l.figma]);if(l.repo)o.push(["View GitHub repo →",l.repo]);return o.map((x,i)=>`<a class="btn${i==0&&!sec?" p":""}" href="${x[1]}" target="_blank" rel="noopener">${x[0]}</a>`).join("")}
 function cvw(p,u){return `<div class="cv">${cover(p,u)}<img class="ov" src="assets/covers/${p.id}.webp" alt="${p.n} preview" onerror="this.remove()"></div>`}
 const SH={offgrid:["THE OFF GRID home page hero on mobile","New drop collection with filters, sort and Quick View","Footer with shop, account, support and legal links"]};
-function shots(p){const concept=["urbanthread","medicare","novabank","talentbridge","quickbite"].includes(p.id);if(concept)return `<div class="shots concept-shot">${[1,2,3].map((n)=>`<figure><img src="assets/screenshots/${p.id}-${n}.svg" alt="${p.n} concept screen ${n} of 3" loading="lazy"><figcaption class="note">${["Overview","Primary workflow","Confirmation / results"][n-1]} · Concept UI</figcaption></figure>`).join("")}</div><p class="note">These are illustrative concept designs, not live or tested products.</p>`;return `<div class="shots">${[1,2,3].map(n=>`<img src="assets/screenshots/${p.id}-${n}.webp" alt="${(SH[p.id]||[])[n-1]||p.n+" screenshot "+n}" loading="lazy" onerror="this.remove()">`).join("")}</div>`}
+function shots(p){const concept=["medicare","novabank","talentbridge","quickbite"].includes(p.id);if(concept)return `<div class="shots concept-shot">${[1,2,3].map((n)=>`<figure><img src="assets/screenshots/${p.id}-${n}.svg" alt="${p.n} concept screen ${n} of 3" loading="lazy"><figcaption class="note">${["Overview","Primary workflow","Confirmation / results"][n-1]} · Concept UI</figcaption></figure>`).join("")}</div><p class="note">These are illustrative concept designs, not live or tested products.</p>`;return `<div class="shots">${[1,2,3].map(n=>`<img src="assets/screenshots/${p.id}-${n}.webp" alt="${(SH[p.id]||[])[n-1]||p.n+" screenshot "+n}" loading="lazy" onerror="this.remove()">`).join("")}</div>`}
 function gw3(a){const m=a.match(/^Given (.*?)(?:, when (.*?))?, then (.*)$/);return m?[m[1],m[2]||"",m[3]]:["",a,""]}
 function flow(p){const[a,b]=p.c,[gi,gl,gx]=p.gw;const N=[{t:"s",l:p.fl[0][0]}];p.fl.forEach((f,i)=>{N.push({t:"t",l:f[0],x:f[1]});if(i==gi)N.push({t:"g",l:f[0],x:gl})});N.push({t:"e",l:p.fl[p.fl.length-1][0]});
 const W=60+N.length*98,H=214,cy=l=>8+l*58+29;
