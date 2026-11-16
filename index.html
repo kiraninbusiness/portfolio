@@ -172,6 +172,34 @@ footer{padding:28px 0;border-top:1px solid var(--line);color:var(--muted);font-s
 .pri{display:inline-block;padding:3px 7px;border-radius:2px;font-size:11px;font-weight:700}
 @media(max-width:850px){.chead{grid-template-columns:minmax(0,1fr) minmax(240px,.9fr);gap:25px}.glance{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:620px){.chead{grid-template-columns:1fr;gap:24px}.chead .cv{aspect-ratio:16/10}.feat .cv{height:auto;aspect-ratio:16/10}.grid>.card:nth-child(3){display:flex;flex-direction:column}.grid>.card:nth-child(3) .cv{height:auto;min-height:0;aspect-ratio:16/10}.glance{grid-template-columns:repeat(2,minmax(0,1fr))}.toc button{width:auto;white-space:nowrap}.cs{padding-bottom:32px;margin-bottom:32px}.cs h2{font-size:24px}.tw table{min-width:520px}}
+
+/* Final stabilisation: remove collision-prone card variations and image overlays */
+.rs{flex:none;white-space:nowrap}
+.grid{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;align-items:stretch;gap:24px}
+.grid>.card,.grid>.card:nth-child(3){display:flex!important;flex-direction:column!important;grid-column:auto!important;min-width:0!important;width:auto!important;transform:none}
+.grid>.card .cv,.grid>.card:nth-child(3) .cv{display:block;width:100%;height:auto!important;min-height:0!important;aspect-ratio:16/10!important;flex:none}
+.grid>.card .bd,.grid>.card:nth-child(3) .bd{display:block;min-width:0;width:100%;height:auto!important;align-self:stretch!important;overflow:visible}
+.cv{isolation:isolate}
+.cv>svg{position:relative;z-index:0;width:100%;height:auto;display:block}
+.cv .ov{display:none!important}
+.card:hover{transform:none;box-shadow:0 10px 28px rgba(36,37,30,.08)}
+.feat{display:grid!important;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr)!important;align-items:stretch}
+.feat>div{min-width:0}
+.feat .cv{height:100%!important;min-height:330px!important;aspect-ratio:auto!important}
+.feat .bd{overflow-wrap:anywhere;min-width:0}
+.bd h3,.bd p,.mini,.tl>div,.cr .card,.sk .card{min-width:0;overflow-wrap:anywhere;word-break:normal}
+body,main,.w,.s,.card,.bd,.cs,.lay{overflow-wrap:anywhere}
+.cs{display:block!important;width:100%;max-width:100%}
+.cs h2,.cs h3,.cs p,.cs li,.cs td,.cs th{color:var(--ink)}
+.cs p,.cs li{color:#55584f}
+.cs .note,.note{color:#62645c!important}
+.toc button{color:#62645c!important}
+.chip{color:#50534b}
+.btn{color:var(--ink)}
+.btn.p{color:#fff}
+.cta .btn{color:#fff}
+.cta .btn.p{color:var(--ink)}
+@media(max-width:620px){.grid{grid-template-columns:minmax(0,1fr)!important;gap:18px}.feat{grid-template-columns:minmax(0,1fr)!important}.feat .cv{height:auto!important;min-height:0!important;aspect-ratio:16/10!important}.bar .rs{margin-left:auto}.hero .row .btn{min-width:0}.cs{overflow:visible}.glance>div{overflow-wrap:anywhere}}
 </style>
 </head>
 <body>
