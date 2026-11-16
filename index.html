@@ -78,6 +78,76 @@ footer{padding:30px 0 50px;color:var(--mute);font-size:15px;text-align:center}
 .cols{grid-template-columns:1fr 1fr}.glance{grid-template-columns:1fr 1fr}.pn .btn{flex:1;justify-content:center}.btn{min-height:46px}.cta{padding:34px 18px}}
 @media(max-width:480px){.cols,.glance{grid-template-columns:1fr}}
 @media print{header,.toc,.pn,.crumb,footer,.noprint{display:none!important}body{background:#fff}.lay{display:block}.cs{break-inside:avoid}}
+
+/* Phase 1 — visual refresh */
+:root{--b:#4356f5;--p:#7657f5;--ink:#151a2e;--mute:#657087;--bg:#f7f8fc;--line:#e7e9f2;--g:linear-gradient(135deg,#4356f5 0%,#7657f5 100%)}
+body{background:linear-gradient(180deg,#f4f5ff 0,#fbfbfe 520px,#fff 100%);font-size:16px}
+.w{max-width:1160px}
+header{background:rgba(255,255,255,.88);border-bottom-color:#e9eaf2;box-shadow:0 5px 24px rgba(25,31,60,.035)}
+.bar{height:72px}
+.logo{font-size:18px}
+.logo b{border-radius:13px;box-shadow:0 7px 18px rgba(91,83,230,.22)}
+nav a{font-size:14px;margin-left:17px}
+.btn{border-radius:12px;font-size:14px;min-height:46px;padding:0 19px}
+.btn.p{box-shadow:0 8px 20px rgba(92,79,232,.18)}
+.hero{min-height:540px;padding:76px 0 82px;gap:64px;grid-template-columns:1.18fr .82fr}
+.hero>div:first-child{max-width:660px}
+.hero>div:first-child>.chip:first-child{background:#eeedff;border-color:#dfdcff;color:#5140bd;padding:7px 14px;font-size:12px;letter-spacing:.015em}
+.hero h1{font-size:clamp(42px,5.4vw,68px);line-height:1.04;letter-spacing:-.045em;max-width:12ch;margin:22px 0}
+.hero h1 span{background:none;color:var(--ink)}
+.hero p{font-size:18px;line-height:1.75;max-width:38em}
+.hero .ph{max-width:410px;justify-self:end;aspect-ratio:4/4.5;object-position:50% 22%;border:8px solid #fff;border-radius:30px;box-shadow:18px 18px 0 #e8e7ff,0 26px 65px rgba(49,62,135,.14)}
+section.s{padding:82px 0}
+#about,#skills{background:#f5f6fc}
+#about .w,#skills .w{position:relative}
+.eyebrow{font-size:11px;letter-spacing:.14em;font-weight:700;margin-bottom:12px}
+h2.t{font-size:clamp(32px,4vw,44px);letter-spacing:-.035em;margin-bottom:18px}
+#about p{font-size:17px;line-height:1.8;color:#566176}
+.mini{background:#fff;border-color:#e8eaf3;border-radius:15px;padding:18px;line-height:1.6}
+.mini b{font-size:14px;letter-spacing:.01em;margin-bottom:5px}
+#process .mini{min-height:112px}
+#experience .tl{border-left-color:#e1e4f1}
+#experience .tl>div{border:1px solid #e9eaf2;border-radius:16px;box-shadow:0 8px 24px rgba(24,33,70,.035);padding:22px 24px}
+#experience .tl>div:before{box-shadow:0 0 0 5px #f0efff}
+#projects{background:#f5f6fc}
+#projects .feat{border:0;border-radius:24px;box-shadow:0 24px 60px rgba(28,35,82,.13);margin:26px 0 44px}
+#projects .feat .bd{background:#171d35;color:#fff;padding:clamp(24px,4vw,42px)}
+#projects .feat .bd p{color:#c4cadd!important;line-height:1.75}
+#projects .feat .bd .chip{background:#29314f;border-color:#3b4568;color:#e4e8ff}
+#projects .feat .bd .chip.r{background:#153e35;border-color:#286b56;color:#baf2d8}
+#projects .feat .bd .btn:not(.p){background:transparent;border-color:#69728e;color:#fff}
+#projects .feat .bd .btn.p{background:var(--g);color:#fff}
+#projects .grid{grid-template-columns:repeat(6,minmax(0,1fr));gap:20px}
+#projects .grid>.card{grid-column:span 2;border:1px solid #e7e9f2;border-radius:19px;box-shadow:0 8px 24px rgba(24,33,70,.045)}
+#projects .grid>.card:nth-child(1),#projects .grid>.card:nth-child(2){grid-column:span 3}
+#projects .grid>.card .bd{padding:23px}
+#projects .grid>.card h3{font-size:23px;letter-spacing:-.025em}
+#projects .grid>.card .cv{background:#f0efff}
+#projects .grid>.card:hover{transform:translateY(-6px);box-shadow:0 20px 42px rgba(46,55,116,.12)}
+#skills .sk .card,#credentials .cr .card{border:1px solid #e8eaf2;border-radius:17px;box-shadow:0 8px 24px rgba(24,33,70,.035)}
+#skills .sk .card h3{font-size:19px}
+#credentials .cr .card{min-height:138px}
+#credentials .cr .card p{color:var(--mute);margin:8px 0 0}
+.cta{border-radius:26px;padding:58px 28px;background:linear-gradient(125deg,#202945 0%,#343a68 58%,#5546a9 100%);box-shadow:0 24px 55px rgba(35,43,92,.18)}
+.cta .t{color:#fff}
+footer{padding:38px 0 52px}
+.card,.mini,.tl>div,.btn{transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease}
+@media(max-width:820px){
+ .bar{height:66px}.hero{min-height:0;padding:52px 0 58px;gap:34px}.hero h1{max-width:15ch;font-size:clamp(40px,8vw,58px)}
+ .hero .ph{justify-self:start;max-width:330px}
+ section.s{padding:60px 0}
+ #projects .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ #projects .grid>.card,#projects .grid>.card:nth-child(1),#projects .grid>.card:nth-child(2){grid-column:span 1}
+}
+@media(max-width:520px){
+ .w{padding:0 18px}.hero{padding:40px 0 48px}.hero h1{font-size:42px}
+ .hero p{font-size:16px}.hero .ph{max-width:280px;border-radius:23px}
+ #projects .grid{grid-template-columns:1fr}
+ #projects .grid>.card,#projects .grid>.card:nth-child(1),#projects .grid>.card:nth-child(2){grid-column:1}
+ section.s{padding:52px 0}
+}
+@media(prefers-reduced-motion:reduce){.card,.mini,.tl>div,.btn{transition:none}}
+
 </style>
 </head>
 <body>
@@ -300,7 +370,7 @@ const SK=[["Business Analysis","Requirements Elicitation,BRD,FRD,User Stories,Ac
 const BP=[["Discover","Understand the business and its users"],["Elicit","Interviews, workshops, observation"],["Analyse","Gaps, rules and process"],["Document","BRD, FRD, user stories"],["Design","Flows, wireframes, UI"],["Validate","Acceptance criteria and UAT"],["Measure","KPIs and review"]];
 function home(){const f=P[0];return `
 <div class="w" id="top"><div class="hero"><div><span class="chip">Open to Business Analyst and UI/UX roles · Bangalore</span>
-<h1>Business Analyst <span>|</span> UI/UX Designer <span>|</span> Product Thinker</h1>
+<h1>Turning business problems into <span>better digital experiences.</span></h1>
 <p>I bridge business requirements and user experience. MBA in IT and Marketing, IBM Certified Business Analyst, and builder of a live D2C e-commerce platform.</p>
 <div style="margin:18px 0 24px">${["BRD / FRD","BPMN","Figma","SQL","Power BI","Agile / Scrum"].map(x=>`<span class="chip">${x}</span>`).join("")}</div>
 <div class="row"><a class="btn p" data-cv href="${CV}">↓ Download Resume</a><a class="btn" href="${LI}" aria-label="LinkedIn profile">LinkedIn ↗</a><a class="btn" href="${MAIL}">✉ Email me</a></div></div>
