@@ -96,18 +96,18 @@ const MAIL="mailto:kiranmamadapur4669@gmail.com",LI="https://www.linkedin.com/in
 const CN=["Pages load in under 3 seconds on a 4G connection","Text meets WCAG AA contrast and all controls are keyboard reachable"];
 const P=[
 {id:"offgrid",n:"THE OFF GRID",t:"D2C streetwear e-commerce",real:1,c:["#2b4bff","#6a3df0"],k:"store",pre:"OG",
-ov:"A mobile-first store for my own Indian streetwear brand. I wrote the requirements, designed the screens in Figma and built the front end and back end.",
+ov:"A mobile-first website and app for a D2C clothing brand. I wrote the requirements, designed the screens in Figma and built the front end and back end.",
 pr:"Shoppers of a new D2C label hesitate over delivery time, fit and trust, and a sold-out size ends the visit.",
-ob:["Show a delivery estimate before the cart","Get shoppers to a confident size choice faster","Keep demand for sold-out sizes","Let the founder manage products and orders securely"],
+ob:["Show a delivery estimate before the cart","Get shoppers to a confident size choice faster","Keep demand for sold-out sizes","Let the store admin manage products and orders securely"],
 sc:["In: discovery, product page, cart and checkout, returns, gift cards, admin","Out: marketplace listings and a loyalty programme (later phase)"],
-st:["Founder: simple catalogue and order management","Shopper: clear delivery, sizes and returns","Courier partner: valid PIN codes and addresses"],
+st:["Store admin: simple catalogue and order management","Shopper: clear delivery, sizes and returns","Courier partner: valid PIN codes and addresses"],
 fr:["Estimate delivery time from a 6-digit PIN code on the product page","Filter by colour, fit and size, with Quick View","Notify Me for sold-out sizes","Return and exchange requests with status"],
 nf:["Layout works from 360px wide screens","Admin sign-in uses two-factor authentication"],
 pe:["Aarav|22, student|Wants a fit he can trust|Unsure about size and delivery date","Meera|27, designer|Buys gifts online|Needs a return path before she commits"],
 jo:["Discover|Sees a drop on Instagram","Browse|Filters by fit and colour","Decide|Checks size and delivery date","Buy|Pays on mobile","After|Tracks order or exchanges"],
 la:["Shopper","Store","Admin"],fl:[[0,"Open product"],[0,"Pick size"],[1,"Estimate by PIN"],[0,"Add to bag"],[1,"Confirm order"],[2,"Pack and ship"]],
 sr:["Product page","Filter and Quick View","Returns"],
-us:["shopper|see my delivery date from my PIN code|I can decide before adding to bag","shopper|be alerted when my size returns|I do not lose the item","founder|update stock and orders in one admin|I save time every day"],
+us:["shopper|see my delivery date from my PIN code|I can decide before adding to bag","shopper|be alerted when my size returns|I do not lose the item","store admin|update stock and orders in one admin|I save time every day"],
 ac:["Given a valid 6-digit PIN, when I tap Check, then an arrival range appears within 2 seconds","Given a sold-out size, when I submit my email, then I join the waitlist and see a confirmation","Given a stock change in admin, then the storefront shows it on the next load"],
 ua:["Enter valid and invalid PIN codes|Range shown; invalid blocked with a message","Join the waitlist for a sold-out size|Confirmation shown; entry visible in admin","Sign in to admin with and without the second factor|Access only with both"],
 kp:["Add-to-bag rate||Track after launch","Returns per 100 orders||Track after launch","Waitlist sign-ups per sold-out size||Track after launch"],
@@ -199,11 +199,11 @@ kp:["Order-to-door time (min)|42|35","Order accuracy (%)|91|97","Cancelled order
 oc:"Expected result: faster delivery and higher accuracy. Figures are assumed for the simulation."}
 ];
 const X={
-offgrid:{m:["Founder, Business Analyst, UI/UX Designer, Builder","2026, ongoing","Solo","Figma, React, Node.js, PostgreSQL, GitHub","Real product, D2C e-commerce"],
-st:["Business owner|Founder: sales, margins and easy catalogue upkeep","End users|Shoppers: clear sizing, delivery date and easy returns","Operations|Packing and courier handoff with correct addresses","Customer support|Fewer questions about sizes, orders and returns","Product / IT|A stable store and a secure admin","Admin|Product, stock and order management"],
+offgrid:{m:["Business Analyst, UI/UX Designer and Developer","Mar 2026, ongoing","Solo build","Figma, React, Node.js, PostgreSQL, GitHub","Real product, D2C e-commerce"],
+st:["Business owner|Brand owner: sales, margins and easy catalogue upkeep","End users|Shoppers: clear sizing, delivery date and easy returns","Operations|Packing and courier handoff with correct addresses","Customer support|Fewer questions about sizes, orders and returns","Product / IT|A stable store and a secure admin","Admin|Product, stock and order management"],
 cur:"Orders and stock are handled by hand, and shoppers ask about sizes and delivery over messages.",
-fut:"Shoppers see sizes and a delivery estimate on the product page, order online and track the order. The founder manages everything in one admin.",
-br:["A size marked sold out cannot be added to the bag","A PIN code must have six digits before an estimate shows"],as:["Most shoppers use mobile","Couriers cover the PIN codes shoppers enter"],co:["Solo founder time and budget","Launch with a small catalogue"],
+fut:"Shoppers see sizes and a delivery estimate on the product page, order online and track the order. The admin manages everything in one place.",
+br:["A size marked sold out cannot be added to the bag","A PIN code must have six digits before an estimate shows"],as:["Most shoppers use mobile","Couriers cover the PIN codes shoppers enter"],co:["Solo build: limited time and budget","Launch with a small catalogue"],
 rk:["Courier estimate is wrong|Show a range, not one date","Stock mismatch|Update stock on every order"],
 it:["Size chips respond on tap and show stock state","The PIN check shows the estimate in place, without a page reload"],
 kd:["Sessions with an add-to-bag divided by all sessions","Return and exchange requests divided by orders","Waitlist sign-ups divided by sold-out size views"],
@@ -301,18 +301,19 @@ const BP=[["Discover","Understand the business and its users"],["Elicit","Interv
 function home(){const f=P[0];return `
 <div class="w" id="top"><div class="hero"><div><span class="chip">Open to Business Analyst and UI/UX roles · Bangalore</span>
 <h1>Business Analyst <span>|</span> UI/UX Designer <span>|</span> Product Thinker</h1>
-<p>I bridge business requirements and user experience. MBA in IT and Marketing, IBM Certified Business Analyst, and founder of my own D2C brand.</p>
+<p>I bridge business requirements and user experience. MBA in IT and Marketing, IBM Certified Business Analyst, and builder of a live D2C e-commerce platform.</p>
 <div style="margin:18px 0 24px">${["BRD / FRD","BPMN","Figma","SQL","Power BI","Agile / Scrum"].map(x=>`<span class="chip">${x}</span>`).join("")}</div>
 <div class="row"><a class="btn p" data-cv href="${CV}">↓ Download Resume</a><a class="btn" href="${LI}" aria-label="LinkedIn profile">LinkedIn ↗</a><a class="btn" href="${MAIL}">✉ Email me</a></div></div>
 <img class="ph" src="kiran-profile.webp" alt="Portrait of Kiran Mamadapur" width="720" height="525"></div></div>
 <section class="s" id="about" aria-labelledby="ab"><div class="w"><div class="eyebrow">About me</div><h2 class="t" id="ab">I bridge business requirements and user experience.</h2>
-<p style="max-width:46em">I work where business and design meet. I write the requirements, map the process, design the screens and check the result with data. I also build my own products, so I know what a requirement costs to implement.</p>
+<p style="max-width:46em">I work where business and design meet. I write the requirements, map the process, design the screens and check the result with data. I also build working products, so I know what a requirement costs to implement.</p>
 <div class="cols" style="margin-top:18px"><div class="mini"><b>Business Analysis</b>Requirements → Process → Documentation → Validation</div><div class="mini"><b>UI/UX</b>Research → Flow → Wireframe → Prototype → UI</div></div></div></section>
 <section class="s" id="process" aria-labelledby="bp"><div class="w"><div class="eyebrow">My BA process</div><h2 class="t" id="bp">Seven steps from problem to proof.</h2><div class="cols" style="grid-template-columns:repeat(auto-fit,minmax(150px,1fr))">${BP.map((b,i)=>`<div class="mini"><b>0${i+1} ${b[0]}</b>${b[1]}</div>`).join("")}</div></div></section>
 <section class="s" id="experience" aria-labelledby="ex"><div class="w"><div class="eyebrow">Experience</div><h2 class="t" id="ex">Where analysis meets execution.</h2><div class="tl">
-<div><b>THE OFF GRID · Founder, Designer, Builder</b><br><span style="color:var(--mute)">2026 · Current</span><p style="margin:8px 0 0">Own the product end to end: brand system, e-commerce requirements, UX design and the build of the store.</p></div>
+<div><b>Business Analyst & UI/UX Designer (Product Build) · THE OFF GRID</b><br><span style="color:var(--mute)">D2C clothing brand, self-employed · Mar 2026 · Current</span><p style="margin:8px 0 0">Wrote the requirements, designed the UX and built the brand's website and app: filters, delivery estimator, returns and exchanges, gift cards and a secured admin.</p></div>
+<div><b>Independent BA & UI/UX Projects</b><br><span style="color:var(--mute)">Concept work with fictional clients · 2026</span><p style="margin:8px 0 0">Five case studies with BRD, FRD, RTM, UAT scenarios and working prototypes.</p></div>
 <div><b>Girias Investment Pvt. Ltd. · Intern</b><br><span style="color:var(--mute)">CRM workflow analysis</span><p style="margin:8px 0 0">Analysed CRM workflows, captured requirements and helped improve the process. Result: 24% efficiency improvement.</p></div></div></div></section>
-<section class="s" id="projects" aria-labelledby="pj"><div class="w"><div class="eyebrow">Flagship project</div><h2 class="t" id="pj">THE OFF GRID: my real product.</h2>
+<section class="s" id="projects" aria-labelledby="pj"><div class="w"><div class="eyebrow">Flagship project</div><h2 class="t" id="pj">THE OFF GRID: a real, live product.</h2>
 <div class="feat card"><div>${cvw(f,"feat")}</div><div class="bd"><span class="chip r">Real product work</span><span class="chip">Flagship</span><h3 style="font-size:30px">${f.n}</h3><p style="color:var(--mute)">${f.ov}</p><div style="margin-bottom:16px">${["React / Vite","Node.js / Express","PostgreSQL","Vercel + Render","Admin 2FA","PWA"].map(x=>`<span class="chip">${x}</span>`).join("")}</div><div class="row"><a class="btn p" href="#case-${f.id}">View Case Study →</a>${lk(f,1)}</div></div></div>
 <h3 style="margin-top:48px">Concept case studies</h3><p class="note" style="margin:0 0 18px">Independent projects that show my BA and UI/UX method. The clients and data are fictional.</p>
 <div class="grid">${P.slice(1).map(p=>`<article class="card">${cvw(p)}<div class="bd">${chips(p)}<h3>${p.n}</h3><p>${p.t}. ${p.ov}</p><a class="go" href="#case-${p.id}" aria-label="View case study: ${p.n}">View Case Study →</a></div></article>`).join("")}</div></div></section>
@@ -325,7 +326,7 @@ function sitemap(p){const[a,b]=p.c;let s=`<svg viewBox="0 0 360 112" role="img" 
 p.sr.forEach((n,i)=>{const x=10+i*118;s+=`<path d="M180 32 V50 H${x+50} V68" fill="none" stroke="${b}" stroke-width="1.5"/><rect x="${x}" y="68" width="100" height="34" rx="8" fill="#fff" stroke="${b}"/><text x="${x+50}" y="89" text-anchor="middle" font-size="9.5" fill="#14172b" font-family="IBM Plex Sans,sans-serif">${n}</text>`});return s+"</svg>"}
 function cs(id){const x=P.findIndex(p=>p.id==id),p=P[x],pv=P[(x+P.length-1)%P.length],nx=P[(x+1)%P.length],S=[],add=(t,h)=>S.push([t,h]);
 const sp=a=>a.split("|"),pr=["Must Have","Must Have","Should Have","Could Have"],pt=[5,5,3,8];
-const real=p.real,lab=real?"This is my own product work.":"This is an independent concept project created to demonstrate BA and UI/UX method. The client, users and data are fictional.";
+const real=p.real,lab=real?"This is real, self-directed product work.":"This is an independent concept project created to demonstrate BA and UI/UX method. The client, users and data are fictional.";
 add("Project overview",tbl(["Item","Detail"],[["Client / product",p.n],["Project type",p.m[4]],["My role",p.m[0]],["Duration",p.m[1]],["Team",p.m[2]],["Tools",p.m[3]]])+`<p style="margin-top:12px">${p.ov}</p><p class="note">${lab}</p>`);
 if(real)add("Product features and process",`<p><b>Process:</b></p><div class="row" style="margin-bottom:12px">${["Research","Requirements","User flow","Wireframes","UI","Development","Testing"].map((x,i)=>`<span class="chip">${i+1}. ${x}</span>`).join("")}</div><p><b>Product features:</b></p>${ul(p.ft)}`);
 add("Business problem",`<p>${p.pr}</p>`);
