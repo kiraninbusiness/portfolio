@@ -20,7 +20,7 @@ a{color:inherit}img,svg{max-width:100%}:focus-visible{outline:3px solid var(--p)
 .w{max-width:1080px;margin:0 auto;padding:0 22px}
 header{position:sticky;top:0;z-index:9;background:#fffc;backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
 .bar{display:flex;align-items:center;justify-content:space-between;height:64px}
-.logo{font:800 19px "Bricolage Grotesque";text-decoration:none}.logo b{background:var(--g);color:#fff;border-radius:8px;padding:3px 8px;margin-right:8px}
+.logo{display:inline-flex;align-items:center;gap:11px;font:800 19px "Bricolage Grotesque";text-decoration:none;letter-spacing:-.025em}.logo b{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;flex:0 0 40px;background:var(--g);color:#fff;border-radius:12px;margin:0;box-shadow:0 5px 14px #6a3df033;border:1px solid #ffffff66}.logo-mark{width:29px;height:29px;display:block}.logo:hover b{transform:translateY(-2px);box-shadow:0 8px 18px #6a3df044}.logo b{transition:transform .2s,box-shadow .2s}
 nav a{margin-left:20px;text-decoration:none;color:var(--mute);font-weight:500;transition:color .2s}nav a:hover,nav a[aria-current="location"]{color:var(--p)}nav a[aria-current="location"]{font-weight:700}nav a:focus-visible{outline-offset:5px}.nav-cv{display:none}
 #mb{display:none;background:none;border:1px solid var(--line);border-radius:8px;font-size:22px;width:44px;height:44px}
 .btn{display:inline-flex;align-items:center;min-height:44px;padding:0 20px;border-radius:10px;border:1.5px solid var(--ink);background:#fff;text-decoration:none;font-weight:600;transition:.2s;cursor:pointer;font-size:16px;font-family:inherit;color:var(--ink)}
@@ -82,7 +82,7 @@ footer{padding:30px 0 50px;color:var(--mute);font-size:15px;text-align:center}
 </head>
 <body>
 <a class="skip" href="#app" onclick="event.preventDefault();document.getElementById('app').focus()">Skip to content</a>
-<header><div class="w bar"><a class="logo" href="#top"><b>KM</b>Kiran Mamadapur</a>
+<header><div class="w bar"><a class="logo" href="#top" aria-label="Kiran Mamadapur, home"><b aria-hidden="true"><svg class="logo-mark" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 24V8h3.5v7.2L17.2 8h4.5l-7.1 7.6L22 24h-4.6l-5.1-6.1-1.8 1.9V24H7Z" fill="white"/><path d="M21 8h4v16h-3.3V13.6l-3.1 4.1-2.1-2.4L21 8Z" fill="white" opacity=".88"/></svg></b><span>Kiran Mamadapur</span></a>
 <button id="mb" aria-label="Open menu" aria-expanded="false">☰</button>
 <nav id="nav" aria-label="Main"><a href="#about">About</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#credentials">Education</a><a href="#contact">Contact</a></nav>
 <a class="btn p rs" data-cv href="Kiran-Mamadapur-Resume.pdf">Download Resume</a></div></header>
