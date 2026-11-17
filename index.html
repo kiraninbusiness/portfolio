@@ -304,6 +304,11 @@ body,main,.w,.s,.card,.bd,.cs,.lay{overflow-wrap:anywhere}
 .cs.artifact-process>.note{margin-top:14px;padding:12px 15px;border-left:3px solid var(--olive);background:#eeefe9}
 @media(max-width:700px){.cs.artifact-brd,.cs.artifact-frd,.cs.artifact-rtm,.cs.artifact-process{padding:17px}.cs.artifact-brd th,.cs.artifact-frd th,.cs.artifact-rtm th{padding:10px;font-size:9px}.cs.artifact-brd td,.cs.artifact-frd td,.cs.artifact-rtm td{padding:10px;font-size:12px}}
 @media print{.cs.artifact-brd,.cs.artifact-frd,.cs.artifact-rtm,.cs.artifact-process{break-inside:avoid;box-shadow:none;background:#fff}.cs.artifact-brd th,.cs.artifact-frd th,.cs.artifact-rtm th{background:#eee!important;color:#111!important}}
+/* Clear recruiter contact actions */
+.contact-email{display:inline-block;margin:4px 0 0;color:#fff;font-size:clamp(17px,2.4vw,22px);font-weight:700;text-decoration:underline;text-decoration-color:#c98d76;text-underline-offset:6px;overflow-wrap:anywhere}
+.contact-note{margin:20px 0 0!important;color:#d7d4cb;font-size:12px}
+.contact-actions .btn{min-width:168px}
+@media(max-width:600px){.contact-actions{flex-direction:column;align-items:stretch}.contact-actions .btn{width:100%}.contact-email{font-size:17px}}
 </style>
 </head>
 <body>
@@ -605,7 +610,19 @@ function home(){const f=P[0];return `
 <section class="s" id="skills" aria-labelledby="sk"><div class="w"><div class="eyebrow">Core capabilities</div><h2 class="t" id="sk">Business Analysis and UI/UX Design skills.</h2><div class="sk">${SK.map(s=>`<div class="card"><h3>${s[0]}</h3><div>${s[1].split(",").map(x=>`<span class="chip">${x}</span>`).join("")}</div></div>`).join("")}</div></div></section>
 <section class="s" id="credentials" aria-labelledby="cr"><div class="w"><div class="eyebrow">Education and certifications</div><h2 class="t" id="cr">Proof behind the work.</h2><div class="cr">
 <div class="card"><b>MBA, IT & Marketing</b><p>81%</p></div><div class="card"><b>BBA</b><p>Above 80%</p></div><div class="card"><b>IBM Certified Business Analyst</b><p>Requirements and process foundations</p></div><div class="card"><b>Deloitte Australia</b><p>Data Analytics Job Simulation</p></div><div class="card"><b>McKinsey Forward Program</b><p>Problem solving and business skills</p></div></div></div></section>
-<section class="s" id="contact" aria-labelledby="ct"><div class="w"><div class="cta"><h2 class="t" id="ct">Let's build better business solutions and user experiences.</h2><p>I'm open to:</p><div style="margin-bottom:22px">${["Business Analyst","Associate Business Analyst","Junior Business Analyst","UI/UX Designer","UI Designer","UX Designer"].map(x=>`<span class="chip" style="color:var(--ink)">${x}</span>`).join("")}</div><div class="row" style="justify-content:center"><a class="btn p" data-cv style="background:#fff;color:var(--ink)" href="${CV}">Download Resume</a><a class="btn" style="background:transparent;color:#fff" href="${LI}">LinkedIn ↗</a><a class="btn" style="background:transparent;color:#fff" href="${MAIL}">✉ Email me</a></div></div></div></section>`}
+<section class="s" id="contact" aria-labelledby="ct"><div class="w"><div class="cta">
+<div class="eyebrow" style="color:#e7c6b7">Recruiter & hiring manager contact</div>
+<h2 class="t" id="ct">Let’s discuss how I can contribute to your team.</h2>
+<p style="max-width:620px;margin:0 auto 18px">Currently open to entry-level and junior opportunities in Business Analysis and UI/UX Design. Available to connect about suitable roles and interviews.</p>
+<div style="margin-bottom:18px">${["Business Analyst","Associate Business Analyst","Junior Business Analyst","UI/UX Designer","UI Designer","UX Designer"].map(x=>`<span class="chip" style="color:var(--ink)">${x}</span>`).join("")}</div>
+<p style="font-size:13px;color:#e6e4dc;margin:0 0 8px">Location preference: Bengaluru · Pune · Mumbai</p>
+<a class="contact-email" href="${MAIL}" aria-label="Email Kiran Mamadapur at kiranmamadapur4669@gmail.com">kiranmamadapur4669@gmail.com</a>
+<div class="row contact-actions" style="justify-content:center;margin-top:22px">
+<a class="btn p" href="${MAIL}" style="background:#fff;color:var(--ink)">✉ Contact by email</a>
+<a class="btn" style="background:transparent;color:#fff" href="${LI}" target="_blank" rel="noopener noreferrer">LinkedIn profile ↗</a>
+<a class="btn" data-cv style="background:transparent;color:#fff" href="${CV}">Download Resume ↓</a>
+</div><p class="contact-note">For a role enquiry, please include the job title and a link to the job description.</p>
+</div></div></section>`}
 function gwt(a){const m=a.match(/^Given (.*?)(?:, when (.*?))?, then (.*)$/);return m?`<b>Given</b> ${m[1]}${m[2]?`<br><b>When</b> ${m[2]}`:""}<br><b>Then</b> ${m[3]}`:a}
 function sitemap(p){const[a,b]=p.c;let s=`<svg viewBox="0 0 360 112" role="img" aria-label="${p.n} sitemap" style="max-width:420px;width:100%;height:auto"><rect x="130" y="4" width="100" height="28" rx="8" fill="${a}"/><text x="180" y="22" text-anchor="middle" font-size="11" fill="#fff" font-family="IBM Plex Sans,sans-serif">Home</text>`;
 p.sr.forEach((n,i)=>{const x=10+i*118;s+=`<path d="M180 32 V50 H${x+50} V68" fill="none" stroke="${b}" stroke-width="1.5"/><rect x="${x}" y="68" width="100" height="34" rx="8" fill="#fff" stroke="${b}"/><text x="${x+50}" y="89" text-anchor="middle" font-size="9.5" fill="#14172b" font-family="IBM Plex Sans,sans-serif">${n}</text>`});return s+"</svg>"}
