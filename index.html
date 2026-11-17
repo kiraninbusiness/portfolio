@@ -225,6 +225,13 @@ body,main,.w,.s,.card,.bd,.cs,.lay{overflow-wrap:anywhere}
 .hero-proof span{font-size:11px;line-height:1.4;color:var(--muted)}
 @media(max-width:850px){.hero{grid-template-columns:minmax(0,1fr) minmax(240px,.8fr);padding:60px 0 45px;gap:30px}.hero .ph{height:390px;max-height:none}.hero-proof>div{padding:14px 12px}}
 @media(max-width:620px){.hero{grid-template-columns:1fr;padding:44px 0 30px;gap:26px}.hero h1{font-size:clamp(42px,12vw,58px)}.hero .ph{height:360px;max-height:none;object-position:center 28%}.hero-proof{grid-template-columns:repeat(2,minmax(0,1fr));margin-bottom:0}.hero-proof>div{padding:14px 12px;border-bottom:1px solid var(--line)}.hero-proof>div:nth-child(2){border-right:0}.hero-proof>div:nth-child(3){padding-left:0}.hero-proof>div:nth-child(3),.hero-proof>div:nth-child(4){border-bottom:0}}
+
+/* Project evidence gallery and BA resource links */
+.shots{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:28px 0 34px;align-items:start}
+.shots img{display:block;width:100%;height:auto;max-height:520px;object-fit:contain;object-position:top center;background:#f2f0eb;border:1px solid var(--line);border-radius:14px;padding:6px}
+.doc-links{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0 6px}
+.doc-links .btn{white-space:normal;line-height:1.35}
+@media(max-width:700px){.shots{grid-template-columns:1fr;gap:12px}.shots img{max-height:none;max-width:520px;margin-inline:auto}.doc-links{flex-direction:column;align-items:stretch}}
 </style>
 </head>
 <body>
@@ -488,6 +495,7 @@ p.sr.forEach((n,i)=>{const x=10+i*118;s+=`<path d="M180 32 V50 H${x+50} V68" fil
 function cs(id){const x=P.findIndex(p=>p.id==id),p=P[x],pv=P[(x+P.length-1)%P.length],nx=P[(x+1)%P.length],S=[],add=(t,h)=>S.push([t,h]);
 const sp=a=>a.split("|"),pr=["Must Have","Must Have","Should Have","Could Have"],pt=[5,5,3,8];
 const real=p.real,lab=real?"This is real, self-directed product work.":"This is an independent concept project created to demonstrate BA and UI/UX method. The client, users and data are fictional.";
+add("Downloadable BA templates",`<p>Use these blank starter documents to structure your own analysis work. They are templates, not completed deliverables for this project.</p><div class="doc-links"><a class="btn" href="documents/brd-template.html" target="_blank" rel="noopener">Download / open BRD template ↗</a><a class="btn" href="documents/frd-template.html" target="_blank" rel="noopener">Download / open FRD template ↗</a><a class="btn" href="documents/rtm-template.html" target="_blank" rel="noopener">Download / open RTM template ↗</a></div>`);
 add("Project overview",tbl(["Item","Detail"],[["Client / product",p.n],["Project type",p.m[4]],["My role",p.m[0]],["Duration",p.m[1]],["Team",p.m[2]],["Tools",p.m[3]]])+`<p style="margin-top:12px">${p.ov}</p><p class="note">${lab}</p>`);
 if(real)add("Product features and process",`<p><b>Process:</b></p><div class="row" style="margin-bottom:12px">${["Research","Requirements","User flow","Wireframes","UI","Development","Testing"].map((x,i)=>`<span class="chip">${i+1}. ${x}</span>`).join("")}</div><p><b>Product features:</b></p>${ul(p.ft)}`);
 add("Business problem",`<p>${p.pr}</p>`);
