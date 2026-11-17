@@ -200,6 +200,13 @@ body,main,.w,.s,.card,.bd,.cs,.lay{overflow-wrap:anywhere}
 .cta .btn{color:#fff}
 .cta .btn.p{color:var(--ink)}
 @media(max-width:620px){.grid{grid-template-columns:minmax(0,1fr)!important;gap:18px}.feat{grid-template-columns:minmax(0,1fr)!important}.feat .cv{height:auto!important;min-height:0!important;aspect-ratio:16/10!important}.bar .rs{margin-left:auto}.hero .row .btn{min-width:0}.cs{overflow:visible}.glance>div{overflow-wrap:anywhere}}
+
+/* Case-study contents navigation: override the global horizontal nav flex layout */
+.lay{grid-template-columns:220px minmax(0,1fr);}
+.lay>.toc{display:block;min-width:0;width:100%;}
+.lay>.toc button{display:block;width:100%;min-width:0;white-space:normal;overflow-wrap:break-word;}
+.lay>div{min-width:0;width:100%;}
+@media(max-width:620px){.lay>.toc{display:flex;width:100%;gap:16px;overflow-x:auto;white-space:nowrap;}.lay>.toc button{display:block;width:auto;flex:0 0 auto;white-space:nowrap;}}
 </style>
 </head>
 <body>
