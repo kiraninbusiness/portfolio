@@ -281,6 +281,29 @@ body,main,.w,.s,.card,.bd,.cs,.lay{overflow-wrap:anywhere}
 .ux-links a{padding:12px;border:1px solid var(--line);font-size:12px;font-weight:700;color:var(--accent);background:#fffefa}
 .ux-links a:hover{border-color:var(--accent)}
 @media(max-width:700px){.ux-grid{grid-template-columns:1fr}.ux-pair img{height:150px}.ux-tools{grid-template-columns:1fr;gap:18px}}
+
+/* Recruiter-facing artefact presentation */
+.cs.artifact-brd,.cs.artifact-frd,.cs.artifact-rtm,.cs.artifact-process{position:relative;padding:clamp(20px,3vw,34px);border:1px solid var(--line);background:linear-gradient(135deg,#fffefa 0%,#f7f5ef 100%);box-shadow:0 12px 34px rgba(36,37,30,.055)}
+.cs.artifact-brd:before,.cs.artifact-frd:before,.cs.artifact-rtm:before,.cs.artifact-process:before{display:block;width:max-content;max-width:100%;margin:0 0 12px;padding:5px 10px;border:1px solid #d9c8bc;background:var(--accent-soft);color:var(--accent);font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+.cs.artifact-brd:before{content:"Business requirements document · summary"}
+.cs.artifact-frd:before{content:"Functional requirements specification"}
+.cs.artifact-rtm:before{content:"Requirements traceability matrix"}
+.cs.artifact-process:before{content:"Process model · illustrative BPMN-style flow"}
+.cs.artifact-brd h2,.cs.artifact-frd h2,.cs.artifact-rtm h2,.cs.artifact-process h2{margin-top:0}
+.cs.artifact-brd .tw,.cs.artifact-frd .tw,.cs.artifact-rtm .tw{margin:18px 0 0;border:1px solid var(--line);background:#fffefa}
+.cs.artifact-brd table,.cs.artifact-frd table,.cs.artifact-rtm table{width:100%;border-collapse:separate;border-spacing:0;font-size:13px;line-height:1.55}
+.cs.artifact-brd th,.cs.artifact-frd th,.cs.artifact-rtm th{position:sticky;top:0;background:var(--dark);color:#fff;text-align:left;font-size:10px;letter-spacing:.08em;text-transform:uppercase;padding:13px 14px}
+.cs.artifact-brd td,.cs.artifact-frd td,.cs.artifact-rtm td{padding:13px 14px;vertical-align:top;border-bottom:1px solid #e9e6de}
+.cs.artifact-brd tbody tr:last-child td,.cs.artifact-frd tbody tr:last-child td,.cs.artifact-rtm tbody tr:last-child td{border-bottom:0}
+.cs.artifact-brd tbody td:first-child,.cs.artifact-frd tbody td:first-child,.cs.artifact-rtm tbody td:first-child{width:20%;font-weight:700;color:var(--olive)}
+.cs.artifact-frd tbody td:first-child,.cs.artifact-rtm tbody td:first-child{white-space:nowrap}
+.cs.artifact-frd tbody tr:nth-child(even),.cs.artifact-rtm tbody tr:nth-child(even),.cs.artifact-brd tbody tr:nth-child(even){background:#f7f5ef}
+.cs.artifact-frd .pri,.cs.artifact-rtm .key{display:inline-flex;align-items:center;padding:4px 8px;border:1px solid var(--line);background:#f4f1e9;font-size:11px;font-weight:700;white-space:nowrap}
+.cs.artifact-process .scroll{padding:18px;border:1px solid var(--line);background:#fffefa;overflow-x:auto}
+.cs.artifact-process .scroll svg{display:block;min-width:680px;max-width:100%;height:auto;margin:auto}
+.cs.artifact-process>.note{margin-top:14px;padding:12px 15px;border-left:3px solid var(--olive);background:#eeefe9}
+@media(max-width:700px){.cs.artifact-brd,.cs.artifact-frd,.cs.artifact-rtm,.cs.artifact-process{padding:17px}.cs.artifact-brd th,.cs.artifact-frd th,.cs.artifact-rtm th{padding:10px;font-size:9px}.cs.artifact-brd td,.cs.artifact-frd td,.cs.artifact-rtm td{padding:10px;font-size:12px}}
+@media print{.cs.artifact-brd,.cs.artifact-frd,.cs.artifact-rtm,.cs.artifact-process{break-inside:avoid;box-shadow:none;background:#fff}.cs.artifact-brd th,.cs.artifact-frd th,.cs.artifact-rtm th{background:#eee!important;color:#111!important}}
 </style>
 </head>
 <body>
@@ -622,7 +645,7 @@ add("Results and expected outcomes",`<p><b>${real?"Result":"Target outcome (not 
 const GR={"Project overview":0,"Product features and process":0,"Business problem":0,"Business objectives":0,"Stakeholders":0,"User personas":0,"UX process evidence":0,"User journey":0,"Interaction states and responsive behaviour":0,"Usability test plan":3,"BRD summary":1,"Functional requirements (FRD)":1,"Non-functional requirements":1,"User stories and acceptance criteria":1,"Jira-style backlog":1,"Process flow (BPMN style)":2,"Wireframes (low fidelity)":2,"High-fidelity UI":2,"Requirements traceability matrix (RTM)":3,"UAT scenarios":3,"Data analysis and KPIs":3,"Results and expected outcomes":3},GN=["Discover","Define","Design","Validate"];
 S.sort((x,y)=>GR[x[0]]-GR[y[0]]);let lg=-1,lt=-1;
 const toc=S.map((q,i)=>{const g=GR[q[0]];let h="";if(g!=lt){lt=g;h=`<div class="tg">${GN[g]}</div>`}return h+`<button data-t="${i}">${i+1}. ${q[0]}</button>`}).join("");
-const body=S.map((q,i)=>{const g=GR[q[0]];let h="";if(g!=lg){lg=g;h=`<div class="gh">0${g+1} ${GN[g]}</div>`}return h+`<section class="cs" id="s${i}" aria-labelledby="h${i}"><h2 id="h${i}"><i>${String(i+1).padStart(2,"0")}</i>${q[0]}</h2>${q[1]}</section>`}).join("");
+const body=S.map((q,i)=>{const g=GR[q[0]],kind=q[0]==="BRD summary"?"artifact-brd":q[0]==="Functional requirements (FRD)"?"artifact-frd":q[0]==="Requirements traceability matrix (RTM)"?"artifact-rtm":q[0]==="Process flow (BPMN style)"?"artifact-process":"";let h="";if(g!=lg){lg=g;h=`<div class="gh">0${g+1} ${GN[g]}</div>`}return h+`<section class="cs ${kind}" id="s${i}" aria-labelledby="h${i}"><h2 id="h${i}"><i>${String(i+1).padStart(2,"0")}</i>${q[0]}</h2>${q[1]}</section>`}).join("");
 return `<div class="w"><div class="crumb"><a class="btn" href="#projects">← Back to Projects</a><button class="btn noprint" onclick="print()">Save as PDF</button></div>
 <div class="chead"><div>${chips(p)}${real?'<span class="chip">Flagship</span>':""}<h1 style="font-size:clamp(32px,5vw,52px)">${p.n}</h1><p style="color:var(--muted);font-size:19px">${p.t}</p><div class="row" style="margin-top:12px">${lk(p)}</div></div>${cvw(p,"hd")}</div>
 <div class="glance">${[["Role",p.m[0]],["Duration",p.m[1]],["Type",p.m[4]],["Tools",p.m[3]]].map(g=>`<div><small>${g[0]}</small>${g[1]}</div>`).join("")}</div>${shots(p)}
