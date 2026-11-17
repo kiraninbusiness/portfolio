@@ -207,6 +207,24 @@ body,main,.w,.s,.card,.bd,.cs,.lay{overflow-wrap:anywhere}
 .lay>.toc button{display:block;width:100%;min-width:0;white-space:normal;overflow-wrap:break-word;}
 .lay>div{min-width:0;width:100%;}
 @media(max-width:620px){.lay>.toc{display:flex;width:100%;gap:16px;overflow-x:auto;white-space:nowrap;}.lay>.toc button{display:block;width:auto;flex:0 0 auto;white-space:nowrap;}}
+
+/* Homepage hero refinement */
+.hero{grid-template-columns:minmax(0,1.08fr) minmax(300px,.82fr);gap:clamp(34px,6vw,86px);padding:82px 0 64px;min-height:0}
+.hero-copy{min-width:0}
+.hero-kicker{margin:0 0 13px!important;color:var(--accent)!important;font-size:10px!important;font-weight:800;letter-spacing:.18em;line-height:1.4!important}
+.hero h1{font-size:clamp(44px,5.6vw,72px);line-height:1.02;letter-spacing:-.065em;margin-bottom:20px}
+.hero .ph{height:470px;max-height:48vw;object-position:center 30%}
+.hero-skills{margin:18px 0 22px}
+.hero-actions{gap:9px}
+.hero-contact{margin:16px 0 0!important;font-size:12px!important;line-height:1.6!important;color:var(--muted)!important}
+.hero-proof{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin:0 0 18px}
+.hero-proof>div{padding:17px 20px;border-right:1px solid var(--line);display:flex;flex-direction:column;gap:2px}
+.hero-proof>div:first-child{padding-left:0}
+.hero-proof>div:last-child{border-right:0}
+.hero-proof strong{font-family:var(--serif);font-size:30px;line-height:1.1;font-weight:400;color:var(--accent)}
+.hero-proof span{font-size:11px;line-height:1.4;color:var(--muted)}
+@media(max-width:850px){.hero{grid-template-columns:minmax(0,1fr) minmax(240px,.8fr);padding:60px 0 45px;gap:30px}.hero .ph{height:390px;max-height:none}.hero-proof>div{padding:14px 12px}}
+@media(max-width:620px){.hero{grid-template-columns:1fr;padding:44px 0 30px;gap:26px}.hero h1{font-size:clamp(42px,12vw,58px)}.hero .ph{height:360px;max-height:none;object-position:center 28%}.hero-proof{grid-template-columns:repeat(2,minmax(0,1fr));margin-bottom:0}.hero-proof>div{padding:14px 12px;border-bottom:1px solid var(--line)}.hero-proof>div:nth-child(2){border-right:0}.hero-proof>div:nth-child(3){padding-left:0}.hero-proof>div:nth-child(3),.hero-proof>div:nth-child(4){border-bottom:0}}
 </style>
 </head>
 <body>
@@ -428,12 +446,26 @@ function chips(p){return p.real?'<span class="chip r">Real product work</span>':
 const SK=[["Business Analysis","Requirements Elicitation,BRD,FRD,User Stories,Acceptance Criteria,RTM,BPMN,Gap Analysis,UAT,Agile / Scrum,Jira"],["UI/UX","Figma,Wireframing,Prototyping,User Flows,Information Architecture,Responsive Design,Usability"],["Data","SQL,Excel,Power BI,DAX,Power Query"],["Technology","HTML,CSS,JavaScript,React,Git / GitHub,PostgreSQL"]];
 const BP=[["Discover","Understand the business and its users"],["Elicit","Interviews, workshops, observation"],["Analyse","Gaps, rules and process"],["Document","BRD, FRD, user stories"],["Design","Flows, wireframes, UI"],["Validate","Acceptance criteria and UAT"],["Measure","KPIs and review"]];
 function home(){const f=P[0];return `
-<div class="w" id="top"><div class="hero"><div><span class="chip">Open to Business Analyst and UI/UX roles · Bangalore</span>
-<h1>Turning business problems into <span>better digital experiences.</span></h1>
-<p>I bridge business requirements and user experience. MBA in IT and Marketing, IBM Certified Business Analyst, and builder of a live D2C e-commerce platform.</p>
-<div style="margin:18px 0 24px">${["BRD / FRD","BPMN","Figma","SQL","Power BI","Agile / Scrum"].map(x=>`<span class="chip">${x}</span>`).join("")}</div>
-<div class="row"><a class="btn p" data-cv href="${CV}">↓ Download Resume</a><a class="btn" href="${LI}" aria-label="LinkedIn profile">LinkedIn ↗</a><a class="btn" href="${MAIL}">✉ Email me</a></div></div>
-<img class="ph" src="kiran-profile.webp" alt="Portrait of Kiran Mamadapur" width="720" height="525"></div></div>
+<div class="w" id="top">
+<div class="hero">
+ <div class="hero-copy">
+  <span class="chip">Open to Business Analyst and Product Analyst roles · Bangalore</span>
+  <p class="hero-kicker">BUSINESS ANALYSIS · PRODUCT THINKING · UI/UX</p>
+  <h1>Turning business problems into <span>clear, useful digital products.</span></h1>
+  <p>I translate business needs into requirements, workflows and user experiences—and bring them to life. MBA in IT & Marketing, IBM Certified Business Analyst, and builder of a live D2C e-commerce website and app.</p>
+  <div class="hero-skills">${["BRD / FRD","BPMN & process mapping","Figma","SQL","Power BI","Agile / Scrum"].map(x=>`<span class="chip">${x}</span>`).join("")}</div>
+  <div class="row hero-actions"><a class="btn p" data-cv href="${CV}">↓ Download Resume</a><a class="btn" href="#projects">Explore Projects ↘</a><a class="btn" href="${LI}" aria-label="LinkedIn profile">LinkedIn ↗</a></div>
+  <p class="hero-contact">Interested in Business Analyst, Associate BA, Product Analyst and Project Coordinator opportunities.</p>
+ </div>
+ <img class="ph" src="kiran-profile.webp" alt="Portrait of Kiran Mamadapur" width="720" height="525">
+</div>
+<div class="hero-proof" aria-label="Portfolio highlights">
+ <div><strong>81%</strong><span>MBA result</span></div>
+ <div><strong>6</strong><span>Portfolio case studies</span></div>
+ <div><strong>1</strong><span>Live D2C product build</span></div>
+ <div><strong>24%</strong><span>CRM efficiency improvement · internship</span></div>
+</div>
+</div>
 <section class="s" id="about" aria-labelledby="ab"><div class="w"><div class="eyebrow">About me</div><h2 class="t" id="ab">I bridge business requirements and user experience.</h2>
 <p style="max-width:46em">I work where business and design meet. I write the requirements, map the process, design the screens and check the result with data. I also build working products, so I know what a requirement costs to implement.</p>
 <div class="cols" style="margin-top:18px"><div class="mini"><b>Business Analysis</b>Requirements → Process → Documentation → Validation</div><div class="mini"><b>UI/UX</b>Research → Flow → Wireframe → Prototype → UI</div></div></div></section>
